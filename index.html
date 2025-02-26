@@ -21,7 +21,7 @@
             justify-content: center;
             min-height: 100vh;
             background-color: #1b1b1b;
-            background-image: radial-gradient(#00ff7f 1px, transparent 1px);
+            background-image: radial-gradient(rgba(0, 255, 127, 0.7) 0.5px, transparent 1px);
             background-size: 10px 10px;
             color: white;
             flex-direction: column;
@@ -65,11 +65,21 @@
             background-color: #2a2a2a;
             border: 2px solid rgba(0, 255, 127, 0.2);
             border-radius: 1.5rem;
-            transition: border-color 0.3s, background-color 0.3s;
+            transition: border-color 0.3s, background-color 0.3s, transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .project-card:hover {
             border-color: rgba(0, 255, 127, 0.5);
             background-color: #333;
+            transform: translateY(-10px);
+        }
+        .project-card h3 {
+            font-size: 1.75rem;
+            color: #00ff7f;
+        }
+        .project-card p {
+            color: #ddd;
+            margin: 0.5rem 0 1rem;
         }
     </style>
     <script>
@@ -98,15 +108,15 @@
             <h2>Projects</h2>
             <div class="project-card">
                 <h3>Hunted</h3>
-                <p>A thrilling cops vs. inmates game with dynamic events and a robust in-game economy.</p>
+                <p>A thrilling cops vs. inmates game with dynamic events and a robust in-game economy. Experience the thrill of being a hunter or an escapee and strategize your way to victory!</p>
             </div>
             <div class="project-card">
                 <h3>Jopios Models</h3>
-                <p>A Roblox model store offering affordable and high-quality assets for developers.</p>
+                <p>A Roblox model store offering affordable and high-quality assets for developers. Our models are meticulously designed to provide both quality and affordability to the community.</p>
             </div>
             <div class="project-card">
                 <h3>Jopio's Games</h3>
-                <p>Developing engaging and immersive experiences for the Roblox community.</p>
+                <p>Developing engaging and immersive experiences for the Roblox community. We strive to innovate and deliver fun and memorable games for players of all ages.</p>
             </div>
         </section>
         <section class="section">
