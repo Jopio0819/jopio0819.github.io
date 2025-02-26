@@ -20,7 +20,9 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background: linear-gradient(135deg, #1b1b1b 70%, #00ff7f);
+            background-color: #1b1b1b;
+            background-image: radial-gradient(#00ff7f 1px, transparent 1px);
+            background-size: 10px 10px;
             color: white;
             flex-direction: column;
         }
@@ -58,6 +60,17 @@
         a {
             color: #00ff7f;
         }
+        .project-card {
+            padding: 2rem;
+            background-color: #2a2a2a;
+            border: 2px solid rgba(0, 255, 127, 0.2);
+            border-radius: 1.5rem;
+            transition: border-color 0.3s, background-color 0.3s;
+        }
+        .project-card:hover {
+            border-color: rgba(0, 255, 127, 0.5);
+            background-color: #333;
+        }
     </style>
     <script>
         window.addEventListener('scroll', () => {
@@ -83,7 +96,18 @@
         </section>
         <section class="section">
             <h2>Projects</h2>
-            <p>Some of my notable projects include 'Hunted', a thrilling cops vs. inmates game with dynamic events and a robust in-game economy.</p>
+            <div class="project-card">
+                <h3>Hunted</h3>
+                <p>A thrilling cops vs. inmates game with dynamic events and a robust in-game economy.</p>
+            </div>
+            <div class="project-card">
+                <h3>Jopios Models</h3>
+                <p>A Roblox model store offering affordable and high-quality assets for developers.</p>
+            </div>
+            <div class="project-card">
+                <h3>Jopio's Games</h3>
+                <p>Developing engaging and immersive experiences for the Roblox community.</p>
+            </div>
         </section>
         <section class="section">
             <h2>Contact</h2>
