@@ -13,15 +13,19 @@
             background-color: #1b1b1b;
             color: #f5f5f5;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
         header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
             background-color: #111;
-            padding: 60px 20px;
-            text-align: center;
             color: white;
+            flex-direction: column;
         }
         h1 {
-            font-size: 4rem;
+            font-size: 5rem;
             margin: 0;
             font-weight: 800;
         }
@@ -30,79 +34,57 @@
             margin: 10px 0 30px;
             color: #aaa;
         }
-        .button-primary {
-            background-color: #d62828;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .button-primary:hover {
-            background-color: #b71d1d;
-        }
         main {
-            padding: 60px 20px;
+            padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
-        .card-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
+        .section {
+            margin-bottom: 200px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-        .card {
-            background: #252525;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            flex: 1 1 300px;
-            max-width: 350px;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         footer {
             background-color: #111;
-            padding: 20px;
+            padding: 40px;
             text-align: center;
             color: white;
         }
     </style>
+    <script>
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
         <h1>Jopio0819</h1>
-        <p class="lead">A professional Roblox developer creating immersive gaming experiences.</p>
-        <button class="button-primary">Get in Touch</button>
+        <p class="lead">Professional Roblox Developer</p>
     </header>
     <main>
-        <section class="card-container">
-            <div class="card">
-                <h2>About Me</h2>
-                <p>I'm Jopio0819, a professional Roblox developer with a passion for scripting, game design, and creating unique in-game assets.</p>
-            </div>
-            <div class="card">
-                <h2>Projects</h2>
-                <ul>
-                    <li><strong>Hunted:</strong> A thrilling cops vs. inmates game with dynamic events and a robust in-game economy.</li>
-                    <li><strong>Other Project:</strong> Description of another cool project showcasing development skills.</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h2>Contact</h2>
-                <p>Reach out to me on <a href="https://www.roblox.com/users/USERNAME/profile" target="_blank">Roblox</a> or via email at <a href="mailto:example@example.com">example@example.com</a>.</p>
-            </div>
+        <section class="section">
+            <h2>About Me</h2>
+            <p>I'm Jopio0819, a professional Roblox developer with a passion for scripting, game design, and creating unique in-game assets.</p>
+        </section>
+        <section class="section">
+            <h2>Projects</h2>
+            <p>Some of my notable projects include 'Hunted', a thrilling cops vs. inmates game with dynamic events and a robust in-game economy.</p>
+        </section>
+        <section class="section">
+            <h2>Contact</h2>
+            <p>Reach out to me on <a href="https://www.roblox.com/users/USERNAME/profile" target="_blank">Roblox</a> or via email at <a href="mailto:example@example.com">example@example.com</a>.</p>
         </section>
     </main>
     <footer>
