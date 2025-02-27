@@ -44,9 +44,13 @@
         }
         .section {
             margin-bottom: 150px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .section.visible {
             opacity: 1;
             transform: translateY(0);
-            transition: opacity 0.6s ease, transform 0.6s ease;
         }
         footer {
             background-color: #111;
@@ -96,8 +100,8 @@
             height: 200%;
             pointer-events: none;
             animation: moveStars 60s linear infinite;
-            opacity: 0.5;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 2px);
+            opacity: 0.3;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 2px);
             background-size: 400px 400px;
         }
         @keyframes moveStars {
@@ -141,5 +145,15 @@
     <footer>
         &copy; 2025 Jopio0819. All rights reserved.
     </footer>
+    <script>
+        document.addEventListener('scroll', () => {
+            document.querySelectorAll('.section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
