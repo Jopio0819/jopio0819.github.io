@@ -14,6 +14,7 @@
             color: #f5f5f5;
             overflow-x: hidden;
             scroll-behavior: smooth;
+            position: relative;
         }
         header {
             display: flex;
@@ -25,21 +26,26 @@
             background-size: 10px 10px;
             color: white;
             flex-direction: column;
+            position: relative;
+            overflow: hidden;
         }
         h1 {
             font-size: 5rem;
             margin: 0;
             font-weight: 800;
+            text-align: center;
         }
         p.lead {
             font-size: 1.5rem;
             margin: 10px 0 30px;
             color: #aaa;
+            text-align: center;
         }
         main {
             padding: 100px 20px;
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
         .section {
             margin-bottom: 250px;
@@ -67,7 +73,7 @@
             border-radius: 1.5rem;
             transition: border-color 0.3s, background-color 0.3s, transform 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 10px;
+            margin-bottom: 20px;
         }
         .project-card:hover {
             border-color: rgba(0, 255, 127, 0.5);
@@ -82,51 +88,58 @@
             color: #ddd;
             margin: 0.5rem 0 1rem;
         }
-        header {
-            background-image: radial-gradient(rgba(0, 255, 127, 0.3) 0.5px, transparent 1px);
-            background-size: 50px 50px;
+        .project-card a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00ff7f;
+            color: #1b1b1b;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .project-card a.button:hover {
+            background-color: #00cc66;
+        }
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200%;
+            pointer-events: none;
+            animation: moveStars 60s linear infinite;
+        }
+        @keyframes moveStars {
+            from { transform: translateY(0); }
+            to { transform: translateY(-50%); }
         }
     </style>
-    <script>
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    section.classList.add('visible');
-                }
-            });
-        });
-    </script>
 </head>
 <body>
     <header>
+        <div class="stars" style="background-image: radial-gradient(rgba(255, 255, 255, 0.3) 1px, transparent 2px); background-size: 100px 100px;"></div>
         <h1>Jopio0819</h1>
         <p class="lead">Professional Roblox Developer</p>
     </header>
     <main>
         <section class="section">
-            <h2>About Me</h2>
-            <p>I'm Jopio0819, a professional Roblox developer with a passion for scripting, game design, and creating unique in-game assets. I am the owner of <a href="https://www.roblox.com/communities/33042503/Jopios-Models#!/about" target="_blank">Jopios Models</a>, offering affordable models, and <a href="https://www.roblox.com/communities/15588152/Jopio-s-games#!/about" target="_blank">Jopio's Games</a>.</p>
-        </section>
-        <section class="section">
             <h2>Projects</h2>
             <div class="project-card">
                 <h3>Hunted</h3>
-                <p>A thrilling cops vs. inmates game with dynamic events and a robust in-game economy. Experience the thrill of being a hunter or an escapee and strategize your way to victory!</p>
+                <p>A thrilling cops vs. inmates game with dynamic events and a robust in-game economy.</p>
+                <a href="#" class="button">Play Hunted</a>
             </div>
             <div class="project-card">
                 <h3>Jopios Models</h3>
-                <p>A Roblox model store offering affordable and high-quality assets for developers. Our models are meticulously designed to provide both quality and affordability to the community.</p>
+                <p>Affordable and high-quality assets for developers on Roblox.</p>
+                <a href="#" class="button">Visit Jopios Models</a>
             </div>
             <div class="project-card">
                 <h3>Jopio's Games</h3>
-                <p>Developing engaging and immersive experiences for the Roblox community. We strive to innovate and deliver fun and memorable games for players of all ages.</p>
+                <p>Engaging and immersive experiences for the Roblox community.</p>
+                <a href="#" class="button">Explore Jopio's Games</a>
             </div>
-        </section>
-        <section class="section">
-            <h2>Contact</h2>
-            <p>Reach out to me on <a href="https://www.roblox.com/users/1569465284/profile" target="_blank">Roblox</a> or via email at <a href="mailto:example@example.com">example@example.com</a>.</p>
         </section>
     </main>
     <footer>
