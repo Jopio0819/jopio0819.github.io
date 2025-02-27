@@ -106,9 +106,9 @@
             height: 200%;
             pointer-events: none;
             animation: moveStars 60s linear infinite;
-            opacity: 0.3;
+            opacity: 0.2;
             background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 2px);
-            background-size: 400px 400px;
+            background-size: 600px 600px;
         }
         @keyframes moveStars {
             from { transform: translateY(0); }
@@ -126,7 +126,6 @@
         <section class="section">
             <h2>About Me</h2>
             <p>
-                Hi!<br>
                 I'm Jopio0819, a developer on Roblox!<br>
                 You might know me, you might not.<br>
                 I've created many different games, such as Water Park Tycoon & Hunted!<br>
@@ -156,15 +155,5 @@
     <footer>
         &copy; 2025 Jopio0819. All rights reserved.
     </footer>
-    <script>
-        document.addEventListener('scroll', () => {
-            document.querySelectorAll('.section').forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    section.classList.add('visible');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
