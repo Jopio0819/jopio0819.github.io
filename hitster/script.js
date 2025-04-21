@@ -4,7 +4,7 @@ const scopes = 'streaming user-read-email user-read-private';
 
 let accessToken = localStorage.getItem('spotify_token');
 
-// Spotify login
+// Spotify login 1
 function redirectToSpotifyAuth() {
   const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scopes}`;
   window.location = authUrl;
