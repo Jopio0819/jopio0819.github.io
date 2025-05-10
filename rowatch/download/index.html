@@ -1,192 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RoWatch Downloads | Jopio0819</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: #1b1b1b;
-            color: #f5f5f5;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        header {
-            padding: 40px 20px 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin: 0;
-        }
-        p.lead {
-            font-size: 1.2rem;
-            color: #aaa;
-            margin-top: 10px;
-        }
-        main {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .project-card {
-            padding: 2rem;
-            background-color: #2a2a2a;
-            border: 2px solid rgba(0, 255, 127, 0.2);
-            border-radius: 1.5rem;
-            transition: border-color 0.3s, background-color 0.3s, transform 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 20px;
-            display: inline-block;
-            width: 40%;
-            vertical-align: top;
-        }
-        .project-card:hover {
-            border-color: rgba(0, 255, 127, 0.5);
-            background-color: #333;
-            transform: translateY(-10px);
-        }
-        .project-card h3 {
-            font-size: 1.75rem;
-            color: #00ff7f;
-        }
-        .project-card a.button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #00ff7f;
-            color: #1b1b1b;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: background-color 0.3s;
-        }
-        .project-card a.button:hover {
-            background-color: #00cc66;
-        }
-        footer {
-            background-color: #111;
-            padding: 40px;
-            text-align: center;
-            color: white;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RoWatch Downloads | Jopio0819</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #1b1b1b;
+      color: #f5f5f5;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
 
-        /* Modal Styles */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 999;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal {
-            background-color: #2a2a2a;
-            border: 2px solid rgba(0, 255, 127, 0.5);
-            border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 0 20px rgba(0, 255, 127, 0.3);
-        }
-        .modal h2 {
-            color: #00ff7f;
-            margin-bottom: 1rem;
-        }
-        .modal p {
-            color: #ddd;
-            margin-bottom: 2rem;
-        }
-        .modal .modal-buttons a,
-        .modal .modal-buttons button {
-            padding: 10px 20px;
-            margin: 0 10px;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .modal .donate-button {
-            background-color: #00ff7f;
-            color: #1b1b1b;
-        }
-        .modal .continue-button {
-            background-color: #444;
-            color: #f5f5f5;
-        }
-        .modal .donate-button:hover {
-            background-color: #00cc66;
-        }
-        .modal .continue-button:hover {
-            background-color: #666;
-        }
-    </style>
+    header {
+      padding: 40px 20px 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    p.lead {
+      font-size: 1.2rem;
+      color: #aaa;
+      margin-top: 10px;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .project-card {
+      padding: 2rem;
+      background-color: #2a2a2a;
+      border: 2px solid rgba(0, 255, 127, 0.2);
+      border-radius: 1.5rem;
+      transition: border-color 0.3s, background-color 0.3s, transform 0.3s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 20px;
+      display: inline-block;
+      width: 40%;
+      vertical-align: top;
+    }
+
+    .project-card:hover {
+      border-color: rgba(0, 255, 127, 0.5);
+      background-color: #333;
+      transform: translateY(-10px);
+    }
+
+    .project-card h3 {
+      font-size: 1.75rem;
+      color: #00ff7f;
+    }
+
+    .project-card a.button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00ff7f;
+      color: #1b1b1b;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      transition: background-color 0.3s;
+    }
+
+    .project-card a.button:hover {
+      background-color: #00cc66;
+    }
+
+    footer {
+      background-color: #111;
+      padding: 40px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal {
+      background-color: #2a2a2a;
+      border: 2px solid rgba(0, 255, 127, 0.5);
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 0 20px rgba(0, 255, 127, 0.3);
+    }
+
+    .modal h2 {
+      color: #00ff7f;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .modal p {
+      color: #ddd;
+      font-size: 1rem;
+    }
+
+    .modal .donate-button {
+      background-color: #00ff7f;
+      color: #1b1b1b;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px 0;
+      transition: background-color 0.3s;
+    }
+
+    .modal .donate-button:hover {
+      background-color: #00cc66;
+    }
+
+    .modal .continue-link {
+      font-size: 0.9rem;
+      color: #aaa;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .modal .continue-link:hover {
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Report System Downloads</h1>
-        <p class="lead">By downloading these files, you accept the <a href="https://github.com/Jopio0819/RoWatch/blob/main/license">license.</a></p>
-    </header>
-    <main>
-        <div class="project-card">
-            <h3>Main Game</h3>
-            <p>The main report system for Roblox developers. Easy to set up and highly effective for moderation.</p>
-            <a href="https://create.roblox.com/store/asset/114411315985360/Report-System-Main-Game" class="button">Download Main Game</a>
-        </div>
-        <div class="project-card">
-            <h3>Second Game</h3>
-            <p>The main report system for the second game. Easy to set up and highly effective for moderation. This system can be in the same place as the main.</p>
-            <a href="https://create.roblox.com/store/asset/127047299527394/Report-System-Second-Game" class="button">Download Second Game</a>
-        </div>
-    </main>
-
-    <!-- Modal -->
-    <div class="modal-overlay" id="donateModal">
-        <div class="modal">
-            <h2>Consider Donating ❤️</h2>
-            <p>Your support helps us keep building awesome tools for Roblox developers!</p>
-            <div class="modal-buttons">
-                <a href="https://your-donate-hub-link.com" class="donate-button" target="_blank">Donate</a>
-                <button class="continue-button" id="continueDownload">Continue to Download</button>
-            </div>
-        </div>
+  <header>
+    <h1>Report System Downloads</h1>
+    <p class="lead">By downloading these files, you accept the <a href="https://github.com/Jopio0819/RoWatch/blob/main/license">license.</a></p>
+  </header>
+  <main>
+    <div class="project-card">
+      <h3>Main Game</h3>
+      <p>The main report system for Roblox developers. Easy to set up and highly effective for moderation.</p>
+      <a href="https://create.roblox.com/store/asset/114411315985360/Report-System-Main-Game" class="button">Download Main Game</a>
     </div>
+    <div class="project-card">
+      <h3>Second Game</h3>
+      <p>The main report system for the second game. Easy to set up and highly effective for moderation. This system can be in the same place as the main.</p>
+      <a href="https://create.roblox.com/store/asset/127047299527394/Report-System-Second-Game" class="button">Download Second Game</a>
+    </div>
+  </main>
 
-    <footer>
-        &copy; 2025 Jopio0819. All rights reserved.
-    </footer>
+  <!-- Modal -->
+  <div class="modal-overlay" id="donateModal">
+    <div class="modal">
+      <div>
+        <h2>Consider Donating ❤️</h2>
+        <p>Your support helps us build more awesome Roblox tools!</p>
+      </div>
+      <div>
+        <a href="https://your-donate-hub-link.com" class="donate-button" target="_blank">Donate</a><br/>
+        <span class="continue-link" id="continueDownload">No thanks, just download</span>
+      </div>
+    </div>
+  </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('a.button');
-            const modal = document.getElementById('donateModal');
-            const continueBtn = document.getElementById('continueDownload');
-            let downloadUrl = null;
+  <footer>
+    &copy; 2025 Jopio0819. All rights reserved.
+  </footer>
 
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    downloadUrl = this.getAttribute('href');
-                    modal.style.display = 'flex';
-                });
-            });
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('a.button');
+      const modal = document.getElementById('donateModal');
+      const continueBtn = document.getElementById('continueDownload');
+      let downloadUrl = null;
 
-            continueBtn.addEventListener('click', () => {
-                modal.style.display = 'none';
-                if (downloadUrl) {
-                    window.location.href = downloadUrl;
-                }
-            });
+      buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          downloadUrl = this.getAttribute('href');
+          modal.style.display = 'flex';
         });
-    </script>
+      });
+
+      continueBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        if (downloadUrl) {
+          window.location.href = downloadUrl;
+        }
+      });
+    });
+  </script>
 </body>
 </html>
