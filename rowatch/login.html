@@ -2,49 +2,18 @@
 <html>
 <head>
   <title>Login</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>Login</h2>
-  <input type="email" id="email" placeholder="E-mail"><br>
-  <button onclick="sendCode()">Stuur verificatiecode</button>
+  <h2>Login or Register</h2>
+  <input type="email" id="email" placeholder="Enter your email address" />
+  <button onclick="sendCode()">Send verification code</button>
 
-  <div id="codeBox" style="display:none;">
-    <input type="text" id="code" placeholder="Code"><br>
-    <button onclick="verifyCode()">Verifieer</button>
+  <div id="verifySection" style="display:none;">
+    <input type="text" id="code" placeholder="Enter the code" />
+    <button onclick="verifyCode()">Verify code</button>
   </div>
 
-  <script>
-    let userEmail = '';
-
-    function sendCode() {
-      userEmail = document.getElementById('email').value;
-
-      fetch('https://script.google.com/macros/s/AKfycbwDMXDkJ1QMI6SpBXOq-CURF2fMAqgPpeTUvuQ8eKdh_Hr2-KMQLcWnVKSR5y4I5foOpA/exec/send', {
-        method: 'POST',
-        body: JSON.stringify({ email: userEmail }),
-        headers: { 'Content-Type': 'application/json' }
-      }).then(res => res.text()).then(() => {
-        alert('Code verzonden!');
-        document.getElementById('codeBox').style.display = 'block';
-      });
-    }
-
-    function verifyCode() {
-      const code = document.getElementById('code').value;
-
-      fetch('https://script.google.com/macros/s/AKfycbwDMXDkJ1QMI6SpBXOq-CURF2fMAqgPpeTUvuQ8eKdh_Hr2-KMQLcWnVKSR5y4I5foOpA/exec/verify', {
-        method: 'POST',
-        body: JSON.stringify({ email: userEmail, code }),
-        headers: { 'Content-Type': 'application/json' }
-      }).then(res => res.json()).then(data => {
-        if (data.success) {
-          sessionStorage.setItem('verified', 'true');
-          window.location.href = 'dashboard.html';
-        } else {
-          alert('Code is ongeldig!');
-        }
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
