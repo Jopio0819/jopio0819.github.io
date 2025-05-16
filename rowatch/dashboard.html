@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h2>Welcome to the Dashboard</h2>
+
+  <div id="premiumSection" style="display:none;">
+    <p><strong>You are a premium user!</strong></p>
+    <button onclick="createToken()">Generate API Token</button>
+    <p id="apiToken"></p>
+
+    <h3>Submit Data</h3>
+    <input id="dataKey" placeholder="Key (e.g. xp)" />
+    <input id="dataValue" placeholder="Value" />
+    <button onclick="submitData()">Submit</button>
+  </div>
+
+  <div id="notPremium">
+    <p>You do not have premium access (yet).</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
