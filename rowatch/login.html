@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body>
+  <h2>Login</h2>
+  <input type="email" id="email" placeholder="E-mail"><br>
+  <button onclick="sendCode()">Stuur verificatiecode</button>
+
+  <div id="codeBox" style="display:none;">
+    <input type="text" id="code" placeholder="Code"><br>
+    <button onclick="verifyCode()">Verifieer</button>
+  </div>
+
+  <script>
+    let userEmail = '';
+
+    function sendCode() {
+      userEmail = document.getElementById('email').value;
+
+      fetch('YOUR_SCRIPT_URL/send', {
+        method: 'POST',
+        body: JSON.stringify({ email: userEmail }),
+        headers: { 'Content-Type': 'application/json' }
+      }).then(res => res.text()).then(() => {
+        alert('Code verzonden!');
+        document.getElementById('codeBox').style.display = 'block';
+      });
+    }
+
+    function verifyCode() {
+      const code = document.getElementById('code').value;
+
+      fetch('YOUR_SCRIPT_URL/verify', {
+        method: 'POST',
+        body: JSON.stringify({ email: userEmail, code }),
+        headers: { 'Content-Type': 'application/json' }
+      }).then(res => res.json()).then(data => {
+        if (data.success) {
+          sessionStorage.setItem('verified', 'true');
+          window.location.href = 'dashboard.html';
+        } else {
+          alert('Code is ongeldig!');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
